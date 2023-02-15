@@ -1,22 +1,14 @@
-#!/usr/bin/env python
-
 import openai
-import readline
 import configparser
 from time import sleep
-from xdg.BaseDirectory import xdg_config_home
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import TerminalFormatter
 
-# Creador: Jesús Chapman (Yisus7u7)
-
-user_config = xdg_config_home
-
 config = configparser.ConfigParser()
 
 try:
-    config.read(f"{user_config}/openai_client.conf")
+    config.read("C:\\openai_client.conf")
     api_token = config.get('openai', 'token')
 except:
     print("Error: File does not exist ~/.config/openai_client.conf")
@@ -26,7 +18,7 @@ except:
     config["openai"] = {
             "token": ""
         }
-    with open(f"{user_config}/openai_client.conf", "w") as archivo_config:
+    with open("C:\\openai_client.conf", "w") as archivo_config:
         config.write(archivo_config)
     
     exit(1)
@@ -60,11 +52,10 @@ session = ChatSession()
 
 print("""
       Welcome to OpenAI Chat CLI !\n
-
 Source code => github.com/Yisus7u7/openai-cli-client
 Creator => Yisus7u7 
+Windows Port => Ivancasg
 Version => 1.0-stable
-
 write \"exit()\" to exit chat
       """)
 
