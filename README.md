@@ -46,6 +46,16 @@ git clone --depth 1 https://github.com/Yisus7u7/openai-cli-client; cd openai-cli
 
 make PREFIX=$PREFIX OPTDIR=$PREFIX/opt all
 ```
+
+In Windows:
+
+```bash
+
+pip install openai
+pip install configparse
+pip install pygments
+```
+
 # Run chat
 
 use `openai-cli-client` command for open chat
